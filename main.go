@@ -4,7 +4,7 @@ import (
 	"net/http" //responsável por nos fornecer os métodos de mapeamento e gerenciamento de requisições
 	"fmt"
 	"database/sql" //fornece apenas uma interface leve sobre SQL. Deve ser usado em conjunto com um driver de banco de dados
-	// _ "github.com/go-sql-driver/mysql" //Driver
+	_ "github.com/go-sql-driver/mysql" //Driver
 ) 
 
 type Card struct {
@@ -27,7 +27,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 func dbConn() (db *sql.DB) {
 	dbDriver := "mysql"
-	dbUser   := "grupo8"
+	dbUser   := "root"
 	dbPass   := "123456"
 	dbName   := "OxeBanking"
 
