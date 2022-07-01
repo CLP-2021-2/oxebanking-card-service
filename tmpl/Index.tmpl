@@ -2,17 +2,25 @@
     {{ template "Header" }}
         {{ template "Menu" }}
 
-    <h2>Testando</h2>
+
+    <h2>Informações</h2>
     <table border="1">
         <thead>
             <tr>
+                <td>Numero do Cartão</td>
                 <td>Nome</td>
+                <td>Data de Vencimento</td>
+                <td>Status</td>
+                <td>Ação</td>
             </tr>
         </thead>
         <tbody>
             {{ range . }}
             <tr>
+                <td>{{ .Id }}</td>
                 <td>{{ .Name }}</td>
+                <td>{{ .Date_venc }}</td>
+                <td>{{ .Status }}</td>
                 <td><a href="/show?id={{ .Id }}">Visualizar</a>  |  <a href="/edit?id={{ .Id }}">Editar</a></td>
             </tr>
             {{ end }}
