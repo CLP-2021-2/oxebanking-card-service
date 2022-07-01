@@ -1,0 +1,22 @@
+{{ define "Index" }}
+    {{ template "Header" }}
+        {{ template "Menu" }}
+
+    <h2>Testando</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Nome</td>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td>{{ .Name }}</td>
+                <td><a href="/show?id={{ .Id }}">Visualizar</a>  |  <a href="/edit?id={{ .Id }}">Editar</a></td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    {{ template "Footer" }}
+{{ end }}
