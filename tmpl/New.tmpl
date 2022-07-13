@@ -1,11 +1,17 @@
 {{ define "New" }}
   {{ template "Header" }}
     {{ template "Menu" }} 
-   <h2>Novo nome e e-mail</h2>
+   <h2>Criação de cartão</h2>
   
     <form method="POST" action="insert">
-      <label> Nome </label><input type="text" name="name" /><br />
-      <label> E-Mail </label><input type="text" name="email" /><br />
+      <label> Nome do cliente </label><input type="text" name="name" /><br />
+      </br>
+      <label> Código de Segurança </label><input type="number" name="cod_seg" /><br />
+      </br>
+      <label> Data de Vencimento </label><input type="date" name="date_venc" /><br />
+      </br>
+      <label> Ativo </label><input type="checkbox" name="status" /><br />
+      </br>
       <input type="submit" value="Save user" />
     </form>
   {{ template "Footer" }}

@@ -3,8 +3,12 @@
     {{ template "Menu" }}
 
 
-    <h2> Registro {{ .Id }} </h2>
+    <h3> Informações Gerais </h3>
+      <p>Número do Cartão: {{ .Id }}</p>
       <p>Nome: {{ .Name }}</p>
+      <p>Código de Segurança: {{ .Cod_seg }}</p>
+      <p>Data de Vencimento: {{ .Date_venc }}</p>
+      <p>Status: {{ .Status }}</p>
       <br /> <a href="/edit?id={{ .Id }}">Editar</a></p><a href="/delete?id={{ .Id }}">Deletar</a>
   {{ template "Footer" }}
 {{ end }}

@@ -3,13 +3,14 @@
         {{ template "Menu" }}
 
 
-    <h2>Informações</h2>
+    <h2>Todos os cartões</h2>
     <table border="1">
         <thead>
             <tr>
-                <td>Numero do Cartão</td>
+                <td>Num. do Cartão</td>
+                <td>Cod. Segurança</td>
                 <td>Nome</td>
-                <td>Data de Vencimento</td>
+                <td>Data de Venc.</td>
                 <td>Status</td>
                 <td>Ação</td>
             </tr>
@@ -18,10 +19,11 @@
             {{ range . }}
             <tr>
                 <td>{{ .Id }}</td>
+                <td>{{ .Cod_seg }}</td>
                 <td>{{ .Name }}</td>
                 <td>{{ .Date_venc }}</td>
                 <td>{{ .Status }}</td>
-                <td><a href="/show?id={{ .Id }}">Visualizar</a>  |  <a href="/edit?id={{ .Id }}">Editar</a></td>
+                <td><a href="/show?id={{ .Id }}">Visualizar</a></td>
             </tr>
             {{ end }}
         </tbody>

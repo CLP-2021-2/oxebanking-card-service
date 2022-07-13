@@ -1,12 +1,18 @@
 {{ define "Edit" }}
     {{ template "Header"}}
         {{ template "Menu"}}
-        <h2>Editar nome e e-mail</h2>
+        <h2>Editar informações</h2>
 
         <form method="POST" action="update">
-            <input type="hidden" name="uid" value="{{ .Id }}" />
+            <input type="hidden" name="id" value="{{ .Id }}" />
             <label> Nome </label><input type="text" name="name" value="{{ .Name }}" /><br />
-            <label> E-mail </label><input type="text" name="email" value="{{ .Email }}" /><br />
+            </br>
+            <label> Cod. Segurança </label><input type="number" name="cod_seg" value="{{ .Cod_seg }}" /><br />
+            </br>
+            <label> Data de Vencimento </label><input type="date" name="date_venc" value="{{ .Date_venc }}" /><br />
+            </br>
+            <label> Ativo </label><input type="checkbox" name="status" value="{{ .Status }}" /><br />
+            </br>
             <input type="submit" value="Save user" />
         </form><br />
         <a href="/delete?id={{ .Id }}">Deletar</a>
